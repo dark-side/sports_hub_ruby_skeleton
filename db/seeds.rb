@@ -26,7 +26,12 @@ comments = ["This article was very informative and helpful.",
             "I learned a lot from this article and will definitely be using the tips.",
             "Great article! I will be sharing this with my friends.",
             "I loved this article and will be reading more from this author.",
-            "This article was very well-written and easy to understand."]
+            "This article was very well-written and easy to understand.",
+            "I will be recommending this article to everyone I know.",
+            "I learned so much from this article and will be using the tips in my own life.",
+            "This article was very helpful and informative.",
+            "I loved this article and will be reading more from this author.",
+            "I will be recommending this article to everyone I know."]
 
 
 articles_titles.each_with_index do |title, index|
@@ -43,6 +48,21 @@ articles = Article.all;
 articles.each_with_index do |article, index|
     article.comments.create(content: comments[index])
 end
+
+5.times do
+    article = Article.all.sample;
+    article.comments.create(content: comments.sample)
+end
+
+4.times do
+    article = Article.all.sample;
+    article.comments.create(content: comments.sample)
+end
+
+6.times do
+    article = Article.all.sample;
+    article.comments.create(content: comments.sample)
+end
     
 
 user = User.new();
@@ -52,7 +72,7 @@ user.password_confirmation = "password";
 user.save!;
 
 user2 = User.new();
-user2.email = "test2gmail.com";
+user2.email = "test2@gmail.com";
 user2.password = "password";
 user2.password_confirmation = "password";
 user2.save!;

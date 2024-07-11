@@ -22,4 +22,12 @@ class Article < ApplicationRecord
     def article_dislikes
         like.dislikes
     end
+
+    def comments_content
+        comments.map(&:content)
+    end
+
+    def comments_count
+        comments.count
+    end
 end

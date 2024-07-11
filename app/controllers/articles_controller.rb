@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
     def index
         @articles = Article.all
 
-        render json: @articles.as_json(methods: [:image_url, :article_likes, :article_dislikes])
+        render json: @articles.as_json(methods: [:image_url, :article_likes, :article_dislikes, :comments_content, :comments_count])
     end
     
     def show
