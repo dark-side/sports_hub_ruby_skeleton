@@ -23,6 +23,8 @@ services:
   backend:
     build: ./
     restart: always
+    volumes:
+      - .:/rails
     depends_on:
       - db
     expose:
@@ -33,7 +35,7 @@ services:
       DB_HOST: db
       DB_PORT: 3306
       DB_USERNAME: root
-      DB_PASSWORD: ""  
+      DB_PASSWORD: ""
     
   frontend:
     build: ../xhub-UI

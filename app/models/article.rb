@@ -12,7 +12,7 @@ class Article < ApplicationRecord
     end
 
     def image_url
-        Rails.application.routes.url_helpers.rails_blob_url(image, host: 'localhost:3002') if image.attached?
+        Rails.application.routes.url_helpers.rails_blob_url(image, host: '127.0.0.1:3002') if image.attached?
     end
 
     def article_likes
