@@ -4,16 +4,37 @@ services:
   db:
     image: mysql
     restart: always
+    volumes:
+       - '/var/lib/mysql:/var/lib/mysql'
+    expose:
+      - "3306"   
+    ports:
+      - "3306:3306"
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD: ""
       MYSQL_DATABASE: xhub_development
+      MYSQL_USER: root
+      MYSQL_PASSWORD: ""
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:3306"]
+        interval: 30s
+        timeout: 10s
+        retries: 5  
   backend:
     build: ./
+    restart: always
     depends_on:
       - db
+    expose:
+      - "3002"  
     ports: 
       - 3002:3002
-    restart: always
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USERNAME: root
+      DB_PASSWORD: ""  
+    
   frontend:
     build: ../xhub-UI
     depends_on:

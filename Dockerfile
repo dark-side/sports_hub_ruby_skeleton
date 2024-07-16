@@ -17,10 +17,14 @@ COPY Gemfile Gemfile.lock ./
 
 RUN bundle install
 
+RUN bundle exec rails db:migrate
+
+RUN bundle exec rails db:seed
 
 # Copy application code
 COPY . .
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3002
-CMD ["./bin/rails", "server"]
+
+CMD ["./bin/rails", "server", "-b", "0.0.0.0", "-p", "3002"]
