@@ -1,0 +1,24 @@
+# Use root/example as user/password credentials
+version: '3.1'
+services:
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: xhub_development
+  backend:
+    build: ./
+    depends_on:
+      - db
+    ports: 
+      - 3002:3002
+    restart: always
+  frontend:
+    build: ../xhub-UI
+    depends_on:
+      - backend
+    ports:
+      - 3000:3000
+    restart: always  
+
