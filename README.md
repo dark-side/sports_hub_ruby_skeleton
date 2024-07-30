@@ -1,24 +1,50 @@
-# README
+# Sports-Hub Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Project Description
 
-Things you may want to cover:
+This is a draft pet project for testing Generative AI on different software engineering tasks. It is planned to evolve and grow over time. The legend of the application is based on the sports-hub application description from the following repo - [Sports-Hub](https://github.com/dark-side/sports-hub).
 
-* Ruby version
+## Dependencies
 
-* System dependencies
+- Docker
+- Docker Compose
 
-* Configuration
+The mentioned dependencies can be installed using the official documentation [here](https://docs.docker.com/compose/install/).
 
-* Database creation
+## Setup and Running the Application
 
-* Database initialization
+### Clone the Repositories
 
-* How to run the test suite
+To run the web application with the React front-end, clone the following repositories within the same folder:
 
-* Services (job queues, cache servers, search engines, etc.)
+```sh
+git clone git@github.com:rkoruk/xhub-backend.git
+git clone git@github.com:rkoruk/xhub-UI.git
+```
 
-* Deployment instructions
+### Run Docker Compose
 
-* ...
+Navigate to the directory where the repositories were cloned and run:
+
+```sh
+docker compose up
+```
+
+### Attach to the Backend Container
+
+Run `docker ps` and copy the `backend` application container ID. Then, attach to the container with the following command:
+
+```sh
+docker exec -ti <CONTAINER ID> /bin/bash
+```
+
+### Reset the Database
+
+Inside the `backend` application container, run the following command to reset the database:
+
+```sh
+bundle exec rails db:reset
+```
+
+### Accessing the Application
+To access the application in a browser locally, open the following URL - `http://localhost:3000/`

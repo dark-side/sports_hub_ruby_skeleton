@@ -2,7 +2,7 @@
 version: '3.1'
 services:
   db:
-    image: mysql
+    image: mysql:8.0
     restart: always
     volumes:
        - '/var/lib/mysql:/var/lib/mysql'
@@ -11,10 +11,8 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: ""
-      MYSQL_DATABASE: xhub_development
-      MYSQL_USER: root
-      MYSQL_PASSWORD: ""
+      MYSQL_DATABASE: sportshub_development
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost:3306"]
         interval: 30s

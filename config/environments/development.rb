@@ -77,4 +77,7 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3002 }
+
+  # Web Console allows you to execute arbitrary code on the server. Needed to allow Docker to access images in storage
+  config.web_console.permissions = '172.18.0.1'
 end
