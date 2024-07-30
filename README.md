@@ -50,11 +50,12 @@ bundle exec rails db:reset
 To access the application in a browser locally, open the following URL - `http://localhost:3000/`
 
 ## License
+
 Licensed under either of
-<ul>
-<li>Apache License, Version 2.0 [LICENSE-APACHE](http://www.apache.org/licenses/LICENSE-2.0)</li>
-<li>MIT license [LICENSE-MIT](http://opensource.org/licenses/MIT)</li>
-</ul>
+
+- [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+- [MIT license](http://opensource.org/licenses/MIT)
+
 at your option.
 
 ## Contribution
