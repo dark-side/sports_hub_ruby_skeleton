@@ -4,6 +4,9 @@
 
 This is a draft pet project for testing Generative AI on different software engineering tasks. It is planned to evolve and grow over time. Specifically, this repo will be a Ruby on Rails playground. As for now, we only have the React.js application as a front-end, but in the future, we plan to extend it to other technologies. The application's legend is based on the sports-hub application description from the following repo: [Sports-Hub](https://github.com/dark-side/sports-hub).
 
+## Available Front-End applications
+- [React.js](https://github.com/rtriska/reactjs_fe_genai_plgrnd)
+
 ## Dependencies
 
 - Docker
