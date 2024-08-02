@@ -10,8 +10,8 @@ default: &default
 
 development:
   <<: *default
-  database: xhub_development
+  database: ruby_be_genai_plgrnd_development
 
 test:
   <<: *default
-  database: xhub_test
+  database: ruby_be_genai_plgrnd_test

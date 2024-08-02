@@ -11,7 +11,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: sportshub_development
+      MYSQL_DATABASE: ruby_be_genai_plgrnd_development
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost:3306"]
@@ -36,10 +36,9 @@ services:
       DB_PASSWORD: ""
     
   frontend:
-    build: ../xhub-UI
+    build: ../reactjs_fe_genai_plgrnd
     depends_on:
       - backend
     ports:
       - 3000:3000
     restart: always  
-
