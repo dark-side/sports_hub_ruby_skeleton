@@ -43,14 +43,40 @@ docker exec -ti <CONTAINER ID> /bin/bash
 
 ### Reset the Database
 
-Inside the `backend` application container, run the following command to reset the database:
+Inside the `backend` application container, run the following command to reset the database if needed:
 
 ```sh
 bundle exec rails db:reset
 ```
 
+### Running on Windows (Tips & Tricks)
+
+While running the App on Windows 11 using WSL, you may face issues related to Unix-style line endings (especially if you are storing the project(s) under the host machine filesystem, not the WSL one (e.g., the project is cloned to the disc `c:` or any other disk you have instead of being cloned to the WSL filesystem). Working within the WSL filesystem is a best practice when developing on Windows, as it helps prevent line ending and permission issues that can arise when using the Windows filesystem. I'm just reminding you that this will save you time and headaches for future projects.
+
+If you are still reading this, please ensure your host machine converts related script(s) to Unix-style line endings.
+```sh
+# Install dos2unix if not already installed
+sudo apt-get install dos2unix
+
+# Convert all files in the project directory to Unix-style line endings
+find . -type f -exec dos2unix {} \;
+
+# Convert one file (example)
+dos2unix bin/docker-entrypoint
+```
+Also, if you face issues with `bin` directory files not being executable, you can fix it with the following commands:
+```sh
+# check current permissions on the file
+ls -l bin/docker-entrypoint
+
+# ensure the file is executable
+chmod +x bin/docker-entrypoint
+```
+
 ### Accessing the Application
-To access the application in a browser locally, open the following URL - `http://localhost:3000/`
+To access the application in a browser locally, open the following URL:
+- Mac, Linux - `http://localhost:3000/`
+- Windows - `http://127.0.0.1:3000/`
 
 ## License
 
