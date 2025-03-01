@@ -23,6 +23,7 @@ To run the web application with the React front-end, clone the following reposit
 ```sh
 git clone git@github.com:rtriska/ruby_be_genai_plgrnd.git
 git clone git@github.com:rtriska/reactjs_fe_genai_plgrnd.git
+git clone git@github.com:rkoruk/api_docs_genai_plgrnd.git
 ```
 
 ### Run Docker Compose
