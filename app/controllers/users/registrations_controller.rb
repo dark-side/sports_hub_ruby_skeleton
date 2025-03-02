@@ -1,5 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   respond_to :json
+
   skip_before_action :verify_authenticity_token, if: :json_request?
 
   private
@@ -14,5 +15,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def json_request?
     request.format.json?
+  end
+
+  def sign_up_params
+    params.require(:registration).permit(:email, :password, :password_confirmation)
   end
 end
