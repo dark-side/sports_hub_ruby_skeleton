@@ -17,7 +17,7 @@ module Api
       private
 
       def respond_with(resource, _opts = {})
-        render json: { token: current_token, user: resource }
+        render json: { authentication_token: current_token, user: resource }
       end
 
       def respond_to_on_destroy
