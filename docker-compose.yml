@@ -35,7 +35,7 @@ services:
       DB_PASSWORD: ""
     
   react_frontend:
-    build: ../reactjs_fe_genai_plgrnd
+    build: ../sports_hub_react_skeleton
     depends_on:
       - backend
     ports:
@@ -43,7 +43,7 @@ services:
     restart: always
   
   api_docs_genai_plgrnd:
-    build: ../api_docs_genai_plgrnd
+    build: ../api_docs_genai_playground
     ports:
       - 5173:5173
     restart: always
