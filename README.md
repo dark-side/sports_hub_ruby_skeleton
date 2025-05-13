@@ -21,9 +21,9 @@ The mentioned dependencies can be installed using the official documentation [he
 To run the web application with the React front-end, clone the following repositories within the same folder:
 
 ```sh
-git clone git@github.com:rtriska/ruby_be_genai_plgrnd.git
-git clone git@github.com:rtriska/reactjs_fe_genai_plgrnd.git
-git clone git@github.com:rkoruk/api_docs_genai_plgrnd.git
+git clone git@github.com:dark-side/sports_hub_ruby_skeleton.git
+git clone git@github.com:dark-side/sports_hub_react_skeleton.git
+git clone git@github.com:dark-side/api_docs_genai_playground.git
 ```
 
 ### Run Docker Compose
