@@ -2,10 +2,13 @@
 
 ## Project Description
 
-This is a draft pet project for testing Generative AI on different software engineering tasks. It is planned to evolve and grow over time. Specifically, this repo will be a Ruby on Rails playground. As for now, we only have the React.js application as a front-end, but in the future, we plan to extend it to other technologies. The application's legend is based on the sports-hub application description from the following repo: [Sports-Hub](https://github.com/dark-side/sports-hub).
+This is a draft pet project for testing Generative AI on different software engineering tasks. It is planned to evolve and grow over time. Specifically, this repo will be a Ruby on Rails playground.
+
+The application's legend is based on the sports-hub application description from the following repo: [Sports-Hub](https://github.com/dark-side/sports-hub).
 
 ## Available Front-End applications
-- [React.js](https://github.com/rtriska/reactjs_fe_genai_plgrnd)
+- [React.js](https://github.com/dark-side/sports_hub_react_skeleton)
+- [Angular](https://github.com/dark-side/sports_hub_angular_skeleton)
 
 ## Dependencies
 
@@ -13,6 +16,7 @@ This is a draft pet project for testing Generative AI on different software engi
 - Docker Compose
 
 The mentioned dependencies can be installed using the official documentation [here](https://docs.docker.com/compose/install/).
+[Podman](https://podman-desktop.io/docs/compose) can be used as an alternative to Docker.
 
 ## Setup and Running the Application
 
@@ -21,17 +25,17 @@ The mentioned dependencies can be installed using the official documentation [he
 To run the web application with the React front-end, clone the following repositories within the same folder:
 
 ```sh
-git clone git@github.com:rtriska/ruby_be_genai_plgrnd.git
-git clone git@github.com:rtriska/reactjs_fe_genai_plgrnd.git
-git clone git@github.com:rkoruk/api_docs_genai_plgrnd.git
+git clone git@github.com:dark-side/sports_hub_ruby_skeleton.git
+git clone git@github.com:dark-side/sports_hub_react_skeleton.git
+git clone git@github.com:dark-side/api_docs_genai_playground.git
 ```
 
 ### Run Docker Compose
 
-Navigate to the back-end application directory and run:
+Navigate to the back-end application directory and run (`-d` for detached mode to run in the background):
 
 ```sh
-docker compose up
+docker compose up -d
 ```
 
 ### Attach to the Backend Container
