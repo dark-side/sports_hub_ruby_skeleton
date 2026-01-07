@@ -13,6 +13,9 @@ Rails.application.routes.draw do
       post "articles" => "articles#create"
       get "articles/:id" => "articles#show"
 
+      get "users" => "users#index"
+      get "users/:id" => "users#show"
+
       namespace :auth do
         post 'sign_in', to: 'sessions#create'
         delete 'sign_out', to: 'sessions#destroy'
