@@ -22,10 +22,30 @@ module Api
       end
     end
 
+    def update
+      @article = Article.find(params[:id])
+
+      if @article.update(article_params)
+        render json: article_json(@article), status: :ok
+      else
+        render json: @article.errors, status: :unprocessable_entity
+      end
+    end
+
+    def destroy
+      @article = Article.find(params[:id])
+      @article.destroy
+      head :no_content
+    end
+
     private
 
     def article_json(article)
       article.as_json(methods: [:image_url, :article_likes, :article_dislikes, :comments_content, :comments_count])
+    end
+
+    def article_params
+      params.require(:article).permit(:title, :short_description, :description, :image, :image_alt)
     end
   end
 end
