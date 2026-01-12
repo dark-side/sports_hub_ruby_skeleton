@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       get "articles" => "articles#index"
       post "articles" => "articles#create"
       get "articles/:id" => "articles#show"
+      put "articles/:id" => "articles#update"
+      delete "articles/:id" => "articles#destroy"
 
       get "users" => "users#index"
       get "users/:id" => "users#show"
