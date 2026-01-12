@@ -7,7 +7,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def respond_with(resource, _opts = {})
     if resource.persisted?
-      render json: resource, status: :ok
+      render json: { id: resource.id, email: resource.email }, status: :created
     else
       render json: resource.errors, status: :unprocessable_entity
     end
@@ -18,6 +18,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def sign_up_params
-    params.require(:registration).permit(:email, :password, :password_confirmation)
+    if params[:user].present?
+      params.require(:user).permit(:email, :password, :password_confirmation)
+    elsif params[:registration].present?
+      params.require(:registration).permit(:email, :password, :password_confirmation)
+    else
+      params.permit(:email, :password, :password_confirmation)
+    end
   end
 end
